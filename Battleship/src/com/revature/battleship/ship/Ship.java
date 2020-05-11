@@ -1,7 +1,12 @@
 package com.revature.battleship.ship;
 
+import org.apache.log4j.Logger;
+
+import com.revature.battleship.exception.ShipLengthLessThanOneException;
+
 public class Ship {
 
+	private static Logger log = Logger.getRootLogger();
 	private String ID;
 	private int length;
 	private String orientation;
@@ -9,7 +14,12 @@ public class Ship {
 	
 	public Ship(String ID, int length) {
 		this.ID = ID;
-		this.setLength(length);
+		try {
+			this.setLength(length);
+		} catch (ShipLengthLessThanOneException e) {
+			log.error("Ship length cannot be less than one.");
+			e.printStackTrace();
+		}
 		//this.status = new String [length][2];
 		this.setRandomOrientation();
 	}
@@ -25,11 +35,11 @@ public class Ship {
 	}
 
 	// Set Ship length
-	public void setLength(int length) {
+	public void setLength(int length) throws ShipLengthLessThanOneException {
 		if(length > 0) {
 			this.length = length;
 		} else {
-			throw new IllegalArgumentException("Length set to less than one.");
+			throw new ShipLengthLessThanOneException();
 		}
 	}
 	

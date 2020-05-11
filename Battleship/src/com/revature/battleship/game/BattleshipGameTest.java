@@ -2,15 +2,19 @@ package com.revature.battleship.game;
 
 import static org.junit.Assert.*;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.battleship.exception.CoordinateGreaterThanBoundaryException;
+import com.revature.battleship.exception.CoordinateLessThanZeroException;
 import com.revature.battleship.map.Map;
 
 public class BattleshipGameTest {
+	private static Logger log = Logger.getRootLogger();
 	BattleshipGame b;
 	
 	@BeforeClass
@@ -42,18 +46,26 @@ public class BattleshipGameTest {
 		Map map = b.getMap();
 		for(int y = 0; y < map.getHeight(); y++) {
 			for(int x = 0; x < map.getWidth(); x++) {
-				if(map.getLocation(y, x) == null) {
-					numNulls++;
-				} else if(map.getLocation(y, x).equals("2")) {
-					numTwos++;
-				} else if(map.getLocation(y, x).equals("3")) {
-					numThrees++;
-				} else if(map.getLocation(y, x).equals("4")) {
-					numFours++;
-				} else if(map.getLocation(y, x).equals("5")) {
-					numFives++;
-				} else if(map.getLocation(y, x).equals("6")) {
-					numSixes++;
+				try {
+					if(map.getLocation(y, x) == null) {
+						numNulls++;
+					} else if(map.getLocation(y, x).equals("2")) {
+						numTwos++;
+					} else if(map.getLocation(y, x).equals("3")) {
+						numThrees++;
+					} else if(map.getLocation(y, x).equals("4")) {
+						numFours++;
+					} else if(map.getLocation(y, x).equals("5")) {
+						numFives++;
+					} else if(map.getLocation(y, x).equals("6")) {
+						numSixes++;
+					}
+				} catch (CoordinateLessThanZeroException e) {
+					log.error("Coordinate must be greater than 0.");
+					e.printStackTrace();
+				} catch (CoordinateGreaterThanBoundaryException e) {
+					log.error("Coordinate must be less than map boundary.");
+					e.printStackTrace();
 				}
 			}
 		}

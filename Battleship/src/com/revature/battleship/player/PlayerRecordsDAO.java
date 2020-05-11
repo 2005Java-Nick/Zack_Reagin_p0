@@ -9,12 +9,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
+import org.apache.log4j.Logger;
+
 public class PlayerRecordsDAO implements PlayerRecords{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static Logger log = Logger.getRootLogger();
 	File directory = new File(".");
 	String fileName = "records.txt";
 	String absolutePath = "";
@@ -26,9 +29,9 @@ public class PlayerRecordsDAO implements PlayerRecords{
 		String playerName = p.getUsername();
 		try {
 			absolutePath = directory.getCanonicalPath() + File.separator + playerName + fileName;
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		} catch (IOException e) {
+			log.error("Invalid file name.", e);
+			e.printStackTrace();
 		}
 		
 		// read the content from file
@@ -39,9 +42,11 @@ public class PlayerRecordsDAO implements PlayerRecords{
 		        ch = bufferedInputStream.read();
 		    }
 		} catch (FileNotFoundException e) {
-		    // exception handling
+			log.error("File not found.", e);
+			e.printStackTrace();
 		} catch (IOException e) {
-		    // exception handling
+			log.error("Problem reading from file.", e);
+			e.printStackTrace();
 		}
 		return fileContents;
 	}
@@ -80,19 +85,20 @@ public class PlayerRecordsDAO implements PlayerRecords{
 		String playerName = p.getUsername();
 		try {
 			absolutePath = directory.getCanonicalPath() + File.separator + playerName + fileName;
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		} catch (IOException e) {
+			log.error("Invalid file name.", e);
+			e.printStackTrace();
 		}
 	
-		// write the content in file 
+		// write the content to file 
 		try {
 			PrintStream printer = new PrintStream(new BufferedOutputStream(new FileOutputStream(absolutePath, true)));
 		    String newRecord = "," + win + "," + remainingTurns + "," + hits;
 		    printer.print(newRecord);
 		    printer.close();
 		} catch (IOException e) {
-		    // exception handling
+			log.error("Problem reading from file.", e);
+			e.printStackTrace();
 		}
 		
 	}

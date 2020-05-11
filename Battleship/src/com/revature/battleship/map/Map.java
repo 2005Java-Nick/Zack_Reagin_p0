@@ -1,12 +1,18 @@
 package com.revature.battleship.map;
 
-import java.awt.List;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
 
+import com.revature.battleship.exception.CoordinateGreaterThanBoundaryException;
+import com.revature.battleship.exception.CoordinateLessThanZeroException;
+import com.revature.battleship.exception.HeightLessThanOneException;
+import com.revature.battleship.exception.WidthLessThanOneException;
 import com.revature.battleship.ship.Ship;
 
 public class Map {
 
+	private static Logger log = Logger.getRootLogger();
+	
 	private int height;
 	private int width;
 	private String[][] contents;
@@ -25,21 +31,35 @@ public class Map {
 		return this.height;
 	}
 	
-	public void setHeight(int height) {
-		this.height = height;
+	public void setHeight(int height) throws HeightLessThanOneException {
+		if(height < 0) {
+			throw new HeightLessThanOneException();
+		} else {
+			this.height = height;
+		} 
 	}
 	
 	public int getWidth() {
 		return this.width;
 	}
 	
-	public void setWidth(int width) {
-		this.width = width;
+	public void setWidth(int width) throws WidthLessThanOneException {
+		if (width < 0) {
+			throw new WidthLessThanOneException();
+		} else {
+			this.width = width;
+		}
 	}
 	
 	// Returns what is located at the given coordinates in the map
-	public String getLocation(int y, int x) {
-		return this.contents[y][x];
+	public String getLocation(int y, int x) throws CoordinateLessThanZeroException, CoordinateGreaterThanBoundaryException {
+		if(y < 0 || x < 0) {
+			throw new CoordinateLessThanZeroException();
+		} else if (y > this.getHeight() || x > this.getWidth()) {
+			throw new CoordinateGreaterThanBoundaryException();
+		} else {
+			return this.contents[y][x];
+		}
 	}
 	
 	// Checks if location has been attacked previously. If not, updates map as a hit or miss, and returns true.
@@ -49,13 +69,21 @@ public class Map {
 			return false;
 		} else {
 			attacked.add(location);
-			if(this.getLocation(y, x) == null) {
-				this.contents[y][x] = "O";
-				System.out.println("Miss!");
-			} else {
-				this.contents[y][x] = "X";
-				System.out.println("Hit!");
-				hits++;
+			try {
+				if(this.getLocation(y, x) == null) {
+					this.contents[y][x] = "O";
+					System.out.println("Miss!");
+				} else {
+					this.contents[y][x] = "X";
+					System.out.println("Hit!");
+					hits++;
+				}
+			} catch (CoordinateLessThanZeroException e) {
+				log.error("Coordinate less than zero", e);
+				e.printStackTrace();
+			} catch (CoordinateGreaterThanBoundaryException e) {
+				log.error("Coordinate out of bounds", e);
+				e.printStackTrace();
 			}
 			return true;
 		}
@@ -104,17 +132,33 @@ public class Map {
 			if (orientation == "vertical") {
 				for (int y = yCoordinate; y < s.getLength() + yCoordinate; y++) {
 					locationFound = true;
-					if(this.getLocation(y, xCoordinate) != null) {
-						locationFound = false;
-						break;
+					try {
+						if(this.getLocation(y, xCoordinate) != null) {
+							locationFound = false;
+							break;
+						}
+					} catch (CoordinateLessThanZeroException e) {
+						log.error("Coordinate less than zero", e);
+						e.printStackTrace();
+					} catch (CoordinateGreaterThanBoundaryException e) {
+						log.error("Coordinate out of bounds", e);
+						e.printStackTrace();
 					}
 				}
 			} else if (orientation == "horizontal") {
 				for (int x = xCoordinate; x < s.getLength() + xCoordinate; x++) {
 					locationFound = true;
-					if(this.getLocation(yCoordinate, x) != null) {
-						locationFound = false;
-						break;
+					try {
+						if(this.getLocation(yCoordinate, x) != null) {
+							locationFound = false;
+							break;
+						}
+					} catch (CoordinateLessThanZeroException e) {
+						log.error("Coordinate less than zero", e);
+						e.printStackTrace();
+					} catch (CoordinateGreaterThanBoundaryException e) {
+						log.error("Coordinate out of bounds", e);
+						e.printStackTrace();
 					}
 				}
 			}
@@ -137,10 +181,18 @@ public class Map {
 			System.out.println(border);
 			System.out.print(alphabet.charAt(y));
 			for(int x = 0; x < this.getWidth(); x++) {
-				if(getLocation(y, x) == null) {
-					System.out.print("|   ");
-				} else {
-					System.out.print("| " + getLocation(y, x) + " ");
+				try {
+					if(getLocation(y, x) == null) {
+						System.out.print("|   ");
+					} else {
+						System.out.print("| " + getLocation(y, x) + " ");
+					}
+				} catch (CoordinateLessThanZeroException e) {
+					log.error("Coordinate less than zero", e);
+					e.printStackTrace();
+				} catch (CoordinateGreaterThanBoundaryException e) {
+					log.error("Coordinate out of bounds", e);
+					e.printStackTrace();
 				}
 			}
 			System.out.println("|");
@@ -161,13 +213,21 @@ public class Map {
 			System.out.println(border);
 			System.out.print(alphabet.charAt(y));
 			for(int x = 0; x < this.getWidth(); x++) {
-				if(getLocation(y, x) == null || getLocation(y, x).matches("[2-6]")) {
-					System.out.print("|   ");
-				} else if (getLocation(y, x) == "X"){
-					System.out.print("| X ");
-				}
-				else if (getLocation(y, x) == "O"){
-					System.out.print("| O ");
+				try {
+					if(getLocation(y, x) == null || getLocation(y, x).matches("[2-6]")) {
+						System.out.print("|   ");
+					} else if (getLocation(y, x) == "X"){
+						System.out.print("| X ");
+					}
+					else if (getLocation(y, x) == "O"){
+						System.out.print("| O ");
+					}
+				} catch (CoordinateLessThanZeroException e) {
+					log.error("Coordinate less than zero", e);
+					e.printStackTrace();
+				} catch (CoordinateGreaterThanBoundaryException e) {
+					log.error("Coordinate out of bounds", e);
+					e.printStackTrace();
 				}
 			}
 			System.out.println("|");

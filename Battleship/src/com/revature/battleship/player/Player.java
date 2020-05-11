@@ -7,10 +7,11 @@ import java.io.Serializable;
  */
 
 public class Player implements Serializable{
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -1434478999142325829L;
 	private String username;
 	private String password;
 	

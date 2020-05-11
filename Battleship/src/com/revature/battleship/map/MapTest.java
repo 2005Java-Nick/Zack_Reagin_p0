@@ -2,16 +2,22 @@ package com.revature.battleship.map;
 
 import static org.junit.Assert.*;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.battleship.exception.CoordinateGreaterThanBoundaryException;
+import com.revature.battleship.exception.CoordinateLessThanZeroException;
+import com.revature.battleship.exception.HeightLessThanOneException;
+import com.revature.battleship.exception.WidthLessThanOneException;
 import com.revature.battleship.game.BattleshipGame;
 import com.revature.battleship.ship.Ship;
 
 public class MapTest {
+	private static Logger log = Logger.getRootLogger();
 	BattleshipGame b = new BattleshipGame();
 	public Map map;
 	public Ship s1 = new Ship("5", 5);
@@ -46,7 +52,12 @@ public class MapTest {
 
 	@Test
 	public void testSetHeight() {
-		map.setHeight(6);
+		try {
+			map.setHeight(6);
+		} catch (HeightLessThanOneException e) {
+			log.error("Height cannot be set to less than one.");
+			e.printStackTrace();
+		}
 		assertEquals(map.getHeight(), 6);
 	}
 
@@ -57,13 +68,26 @@ public class MapTest {
 
 	@Test
 	public void testSetWidth() {
-		map.setWidth(8);
+		try {
+			map.setWidth(8);
+		} catch (WidthLessThanOneException e) {
+			log.error("Width cannot be set to less than one.");
+			e.printStackTrace();
+		}
 		assertEquals(map.getWidth(), 8);
 	}
 
 	@Test
 	public void testGetLocation() {
-		assertEquals(map.getLocation(3, 5), null);
+		try {
+			assertEquals(map.getLocation(3, 5), null);
+		} catch (CoordinateLessThanZeroException e) {
+			log.error("Coordinate cannot be less than 0.");
+			e.printStackTrace();
+		} catch (CoordinateGreaterThanBoundaryException e) {
+			log.error("Coordinate cannot exceed the height/width of the map.");
+			e.printStackTrace();
+		}
 	}
 
 	@Test
@@ -85,12 +109,20 @@ public class MapTest {
 		int numFives = 0;
 		for(int y = 0; y < map.getHeight(); y++) {
 			for(int x = 0; x < map.getWidth(); x++) {
-				if(map.getLocation(y, x) == null) {
-					numNulls++;
-				} else if(map.getLocation(y, x).equals("4")) {
-					numFours++;
-				} else if(map.getLocation(y, x).equals("5")) {
-					numFives++;
+				try {
+					if(map.getLocation(y, x) == null) {
+						numNulls++;
+					} else if(map.getLocation(y, x).equals("4")) {
+						numFours++;
+					} else if(map.getLocation(y, x).equals("5")) {
+						numFives++;
+					}
+				} catch (CoordinateLessThanZeroException e) {
+					log.error("Coordinate cannot be less than 0.");
+					e.printStackTrace();
+				} catch (CoordinateGreaterThanBoundaryException e) {
+					log.error("Coordinate cannot exceed the height/width of the map.");
+					e.printStackTrace();
 				}
 			}
 		}
