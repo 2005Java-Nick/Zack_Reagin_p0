@@ -2,14 +2,18 @@ package com.revature.battleship.ship;
 
 import static org.junit.Assert.*;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.battleship.exception.ShipLengthLessThanOneException;
+
 public class ShipTest {
 
+	private static Logger log = Logger.getRootLogger();
 	Ship s;
 	
 	@BeforeClass
@@ -47,7 +51,12 @@ public class ShipTest {
 
 	@Test
 	public void testSetLength() {
-		s.setLength(12);
+		try {
+			s.setLength(12);
+		} catch (ShipLengthLessThanOneException e) {
+			log.error("Ship length cannot be less than one.");
+			e.printStackTrace();
+		}
 		assertEquals(s.getLength(), 12);
 	}
 

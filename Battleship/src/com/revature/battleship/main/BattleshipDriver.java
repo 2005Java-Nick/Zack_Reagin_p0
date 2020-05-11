@@ -129,13 +129,13 @@ public class BattleshipDriver {
 				System.out.println("For example, to hit the top left square, enter A1.");
 				System.out.println("OK, it's time to begin. Good luck.");
 				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-				while(battleship.getRemainingTurns() > 0 && BattleshipGame.getHits() < 20) {
+				while(battleship.getRemainingTurns() > 0 && BattleshipGame.getHits() < battleship.getTOTAL_HITS()) {
 					battleship.getMap().printPlayMap();
 					System.out.println("Please select a location:");
 					location = scan.nextLine();
 					BattleshipGame.attack(location);
 				}
-				if(BattleshipGame.getHits() == 20) {
+				if(BattleshipGame.getHits() == battleship.getTOTAL_HITS()) {
 					System.out.println("Congratulations! You win!");
 					System.out.println("You managed to sink all enemy ships with " + battleship.getRemainingTurns() + " missilies remaining!");
 					records.updateRecords(player, true, battleship.getRemainingTurns(), BattleshipGame.getHits());

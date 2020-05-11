@@ -9,14 +9,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+
+import org.apache.log4j.Logger;
+
 import com.revature.battleship.player.Player;
 
 public class HighScoresDAO implements HighScores{
 	
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -6305283214848747591L;
+	private static Logger log = Logger.getRootLogger();
 	File directory = new File(".");
 	String fileName = "highscores.txt";
 	String absolutePath = "";
@@ -28,7 +33,7 @@ public class HighScoresDAO implements HighScores{
 		try {
 			absolutePath = directory.getCanonicalPath() + File.separator + fileName;
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			log.error("Error finding file.");
 			e1.printStackTrace();
 		}
 		
@@ -114,9 +119,9 @@ public class HighScoresDAO implements HighScores{
 		}
 		try {
 			absolutePath = directory.getCanonicalPath() + File.separator + fileName;
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		} catch (IOException e) {
+			log.error("Error finding file.");
+			e.printStackTrace();
 		}
 	
 		// write the content in file 
@@ -125,7 +130,7 @@ public class HighScoresDAO implements HighScores{
 		    printer.print(update);
 		    printer.close();
 		} catch (IOException e) {
-		    // exception handling
+			log.error("Error printing to file.");
 		}
 	}
 }

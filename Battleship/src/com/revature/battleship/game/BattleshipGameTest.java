@@ -36,7 +36,7 @@ public class BattleshipGameTest {
 
 	@Test
 	public void testSetUp() {
-		b.setUp();
+		BattleshipGame.setUp();
 		int numNulls = 0;
 		int numTwos = 0;
 		int numThrees = 0;
@@ -85,13 +85,13 @@ public class BattleshipGameTest {
 
 	@Test
 	public void testGetHits() {
-		assertEquals(b.getHits(), 0);
+		assertEquals(BattleshipGame.getHits(), 0);
 	}
 
 	@Test
 	public void testSetHits() {
-		b.setHits(5);
-		assertEquals(b.getHits(), 5);
+		BattleshipGame.setHits(5);
+		assertEquals(BattleshipGame.getHits(), 5);
 	}
 
 }

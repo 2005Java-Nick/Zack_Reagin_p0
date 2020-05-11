@@ -52,11 +52,11 @@ public class BattleshipGame {
 	
 	// Counts turns left before game ends
 	public int getRemainingTurns() {
-		return this.turns;
+		return BattleshipGame.turns;
 	}
 	
 	public Map getMap() {
-		return this.map;
+		return BattleshipGame.map;
 	}
 
 	// Returns total number of successful hits
@@ -66,5 +66,9 @@ public class BattleshipGame {
 
 	public static void setHits(int hits) {
 		BattleshipGame.hits = hits;
+	}
+
+	public int getTOTAL_HITS() {
+		return TOTAL_HITS;
 	}
 }
