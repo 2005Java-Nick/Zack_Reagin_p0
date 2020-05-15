@@ -37,7 +37,7 @@ public class BattleshipGame {
 	// Takes user input for attack location and attempts to attack that coordinate
 	public static void attack(String location) {
 		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		char yCoordinate = location.charAt(0);
+		char yCoordinate = Character.toUpperCase(location.charAt(0));
 		int y = alphabet.indexOf(yCoordinate);
 		int x = (Integer.parseInt(location.substring(1))) - 1;
 		if (map.attackLocation(y,x)) {

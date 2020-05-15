@@ -56,11 +56,11 @@ public class HighScoresDAO implements HighScores{
 	@Override
 	public void displayRecords() {
 		String[] records = this.getRecords().split(",");
-		System.out.println("High Scores");
+		System.out.println("\nHigh Scores");
 		for(int i = 1; i < records.length; i++) {
 			if (i % 4 == 1) {
 				System.out.println("Rank " + ((i/4)+1) + ": ");
-				System.out.print("\tPlayer: " + records[i]);
+				System.out.println("\tPlayer: " + records[i]);
 			} else if (i % 4 == 2) {
 				System.out.print("\tResult: ");
 				if(records[i].equals("true")) {
@@ -74,6 +74,7 @@ public class HighScoresDAO implements HighScores{
 				System.out.println("\tTotal Hits: " + records[i]);
 			}
 		}
+		System.out.println();
 	}
 	
 	/*
@@ -123,10 +124,10 @@ public class HighScoresDAO implements HighScores{
 			log.error("Error finding file.");
 			e.printStackTrace();
 		}
-	
+		File highScoreFile = new File(absolutePath);
 		// write the content in file 
 		try {
-			PrintStream printer = new PrintStream(new BufferedOutputStream(new FileOutputStream(absolutePath, false)));
+			PrintStream printer = new PrintStream(new BufferedOutputStream(new FileOutputStream(highScoreFile, false)));
 		    printer.print(update);
 		    printer.close();
 		} catch (IOException e) {

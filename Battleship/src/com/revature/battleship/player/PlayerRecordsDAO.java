@@ -31,7 +31,6 @@ public class PlayerRecordsDAO implements PlayerRecords{
 			absolutePath = directory.getCanonicalPath() + File.separator + playerName + fileName;
 		} catch (IOException e) {
 			log.error("Invalid file name.", e);
-			e.printStackTrace();
 		}
 		
 		// read the content from file
@@ -43,10 +42,8 @@ public class PlayerRecordsDAO implements PlayerRecords{
 		    }
 		} catch (FileNotFoundException e) {
 			log.error("File not found.", e);
-			e.printStackTrace();
 		} catch (IOException e) {
 			log.error("Problem reading from file.", e);
-			e.printStackTrace();
 		}
 		return fileContents;
 	}
@@ -57,6 +54,7 @@ public class PlayerRecordsDAO implements PlayerRecords{
 		if(this.getRecords(p).equals("")) {
 			System.out.println("No records to display.");
 		} else {
+			System.out.println();
 			String[] records = this.getRecords(p).split(",");
 			for(int i = 1; i < records.length; i++) {
 				if (i % 3 == 1) {
@@ -73,6 +71,7 @@ public class PlayerRecordsDAO implements PlayerRecords{
 					System.out.println("\tTotal Hits: " + records[i]);
 				}
 			}
+			System.out.println();
 		}
 	}
 
@@ -89,10 +88,10 @@ public class PlayerRecordsDAO implements PlayerRecords{
 			log.error("Invalid file name.", e);
 			e.printStackTrace();
 		}
-	
+		File recordFile = new File(absolutePath);
 		// write the content to file 
 		try {
-			PrintStream printer = new PrintStream(new BufferedOutputStream(new FileOutputStream(absolutePath, true)));
+			PrintStream printer = new PrintStream(new BufferedOutputStream(new FileOutputStream(recordFile, true)));
 		    String newRecord = "," + win + "," + remainingTurns + "," + hits;
 		    printer.print(newRecord);
 		    printer.close();

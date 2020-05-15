@@ -30,10 +30,10 @@ public class PlayerDAOSerialization implements PlayerDAO{
 			log.error("Cannot resolve file path.", e);
 			e.printStackTrace();
 		}
-	
+		File usernamePasswordFile = new File(absolutePath);
 		// write the content in file 
 		try {
-			PrintStream printer = new PrintStream(new BufferedOutputStream(new FileOutputStream(absolutePath, true)));
+			PrintStream printer = new PrintStream(new BufferedOutputStream(new FileOutputStream(usernamePasswordFile, true)));
 		    String userName = "{" + p.getUsername() + "}";
 		    printer.print(userName);
 		    String password = "[" + p.getPassword() + "]";

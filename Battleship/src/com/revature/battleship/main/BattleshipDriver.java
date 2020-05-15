@@ -8,6 +8,9 @@ import com.revature.battleship.dao.PlayerDAOSerialization;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 import com.revature.battleship.game.*;
 
 /*	Battleship Program Flow
@@ -57,6 +60,8 @@ import com.revature.battleship.game.*;
 public class BattleshipDriver {
 	private static final BattleshipGame battleship = new BattleshipGame();
 	
+	private static Logger log = Logger.getLogger(BattleshipDriver.class);
+	
 	private static Scanner scan = new Scanner(System.in);
 	
 	private static PlayerDAO playerDao = new PlayerDAOSerialization();
@@ -66,6 +71,7 @@ public class BattleshipDriver {
 	private static PlayerRecords records;
 	
 	public static void main(String[] args) {
+		PropertyConfigurator.configure("log4j.properties");
 		String playername;
 		String password;
 		Player player = null;
@@ -86,7 +92,10 @@ public class BattleshipDriver {
 				player = playerDao.getPlayer(playername, password);
 				if(player == null) {
 					System.out.println("Sorry. Either your username or password was incorrect.");
+					log.info("Attempt to log into accout with user name " + playername + " was unsuccessful.");
 					choice = "";
+				} else {
+					log.info("Player " + player.getUsername() + " successfully logged in.");
 				}
 			} else if(choice.equalsIgnoreCase("C")) {
 				System.out.print("Please enter a user name: ");
@@ -99,6 +108,7 @@ public class BattleshipDriver {
 					password = scan.nextLine();
 					player = new Player(playername, password);
 					playerDao.savePlayer(player);
+					log.info("New account created with user name " + player.getUsername() + ".");
 				}
 			} else {
 				System.out.println("Invalid choice. Please enter 'L' to log in, or 'C' to create a new account:");
@@ -115,24 +125,82 @@ public class BattleshipDriver {
 			selection = scan.nextLine();
 			if (selection.equalsIgnoreCase("V")) {
 				records.displayRecords(player);
+				log.info("User " + player.getUsername() + " viewed their records.");
 			} else if (selection.equalsIgnoreCase("H")) {
 				highScores.displayRecords();
+				log.info("User " + player.getUsername() + " viewed the high scores.");
 			} else if (selection.equalsIgnoreCase("P")) {
 				BattleshipGame.setUp();
 				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 				System.out.println("We have received intelligence that there are five enemy ships hidden somewhere off the coast.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("We have created a map of the area, which we have divided up into grids.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("Each of our missiles will destroy an area approximately the size of one of the squares.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("The ships themselves take up 2 squares, 3 squares, 4 squares, 5 squares, or 6 squares, respectively.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("In order to destroy the ships, you must hit each section, but we only have 40 missiles, so aim carefully.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("Enter the coordinates for the square you would like to hit by entering the letter and number.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("For example, to hit the top left square, enter A1.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("OK, it's time to begin. Good luck.");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					log.error("Problem with using thread sleep method.", e);
+				}
 				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 				while(battleship.getRemainingTurns() > 0 && BattleshipGame.getHits() < battleship.getTOTAL_HITS()) {
+					try {
+						Thread.sleep(1500);
+					} catch (InterruptedException e) {
+						log.error("Problem with using thread sleep method.", e);
+					}
 					battleship.getMap().printPlayMap();
 					System.out.println("Please select a location:");
 					location = scan.nextLine();
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						log.error("Problem with using thread sleep method.", e);
+					}
+					System.out.println("Launching missile...");
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						log.error("Problem with using thread sleep method.", e);
+					}
 					BattleshipGame.attack(location);
 				}
 				if(BattleshipGame.getHits() == battleship.getTOTAL_HITS()) {
@@ -140,11 +208,13 @@ public class BattleshipDriver {
 					System.out.println("You managed to sink all enemy ships with " + battleship.getRemainingTurns() + " missilies remaining!");
 					records.updateRecords(player, true, battleship.getRemainingTurns(), BattleshipGame.getHits());
 					highScores.updateRecords(player, true, battleship.getRemainingTurns(), BattleshipGame.getHits());
+					log.info("User " + player.getUsername() + " just won a game with " + battleship.getRemainingTurns() + " turns remaining.");
 				} else {
 					System.out.println("Oh no! We're out of missiles!");
 					System.out.println("You only managed to hit enemy ships " + BattleshipGame.getHits() + " times!");
 					records.updateRecords(player, false, battleship.getRemainingTurns(), BattleshipGame.getHits());
 					highScores.updateRecords(player, false, battleship.getRemainingTurns(), BattleshipGame.getHits());
+					log.info("User " + player.getUsername() + " just lost a game with " + BattleshipGame.getHits() + " total successful hit(s).");
 				}
 				battleship.getMap().printMap();
 			} else if (selection.equalsIgnoreCase("Q")) {
