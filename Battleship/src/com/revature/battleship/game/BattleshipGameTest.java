@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import com.revature.battleship.exception.CoordinateGreaterThanBoundaryException;
 import com.revature.battleship.exception.CoordinateLessThanZeroException;
-import com.revature.battleship.map.Map;
+import com.revature.battleship.gamemap.GameMap;
 
 public class BattleshipGameTest {
 	private static Logger log = Logger.getRootLogger();
@@ -43,21 +43,21 @@ public class BattleshipGameTest {
 		int numFours = 0;
 		int numFives = 0;
 		int numSixes = 0;
-		Map map = b.getMap();
-		for(int y = 0; y < map.getHeight(); y++) {
-			for(int x = 0; x < map.getWidth(); x++) {
+		GameMap gameMap = b.getMap();
+		for(int y = 0; y < gameMap.getHeight(); y++) {
+			for(int x = 0; x < gameMap.getWidth(); x++) {
 				try {
-					if(map.getLocation(y, x) == null) {
+					if(gameMap.getLocation(y, x) == null) {
 						numNulls++;
-					} else if(map.getLocation(y, x).equals("2")) {
+					} else if(gameMap.getLocation(y, x).equals("2")) {
 						numTwos++;
-					} else if(map.getLocation(y, x).equals("3")) {
+					} else if(gameMap.getLocation(y, x).equals("3")) {
 						numThrees++;
-					} else if(map.getLocation(y, x).equals("4")) {
+					} else if(gameMap.getLocation(y, x).equals("4")) {
 						numFours++;
-					} else if(map.getLocation(y, x).equals("5")) {
+					} else if(gameMap.getLocation(y, x).equals("5")) {
 						numFives++;
-					} else if(map.getLocation(y, x).equals("6")) {
+					} else if(gameMap.getLocation(y, x).equals("6")) {
 						numSixes++;
 					}
 				} catch (CoordinateLessThanZeroException e) {
@@ -77,10 +77,9 @@ public class BattleshipGameTest {
 		assertEquals(numSixes, 6);
 	}
 
-
 	@Test
 	public void testGetRemainingTurns() {
-		assertEquals(b.getRemainingTurns(), 40);
+		assertEquals(b.getRemainingTurns(), 50);
 	}
 
 	@Test

@@ -1,4 +1,4 @@
-package com.revature.battleship.map;
+package com.revature.battleship.gamemap;
 
 import java.util.ArrayList;
 import org.apache.log4j.Logger;
@@ -9,7 +9,7 @@ import com.revature.battleship.exception.HeightLessThanOneException;
 import com.revature.battleship.exception.WidthLessThanOneException;
 import com.revature.battleship.ship.Ship;
 
-public class Map {
+public class GameMap {
 
 	private static Logger log = Logger.getRootLogger();
 	
@@ -21,7 +21,7 @@ public class Map {
 	private ArrayList<String> attacked = new ArrayList<String>();
 	private int hits = 0;
 	
-	public Map(int height, int width) {
+	public GameMap(int height, int width) {
 		this.height = height;
 		this.width = width;
 		contents = new String [this.height][this.width];
@@ -49,6 +49,26 @@ public class Map {
 		} else {
 			this.width = width;
 		}
+	}
+	
+	public boolean checkIfCoordinatesValid(String loc) {
+		if(loc == null) {
+			return false;
+		}
+		loc = loc.toUpperCase();
+		String alphabet = "ABCDEFGHIJ";
+		String numbers = "123456789";
+		String ten = "10";
+		if (loc.length() < 2 || loc.length() > 3) {
+			return false;
+		} else if (alphabet.indexOf(loc.charAt(0)) == -1){
+			return false;
+		} else if (loc.length() == 3 && !loc.substring(1).equalsIgnoreCase(ten)) {
+			return false;
+		} else if (numbers.indexOf(loc.charAt(1)) == -1) {
+			return false;
+		}
+		return true;
 	}
 	
 	// Returns what is located at the given coordinates in the map

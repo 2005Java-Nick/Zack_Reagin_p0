@@ -1,11 +1,9 @@
 package com.revature.battleship.main;
 
 import com.revature.battleship.player.Player;
-import com.revature.battleship.player.PlayerRecords;
-import com.revature.battleship.player.PlayerRecordsDAO;
-import com.revature.battleship.dao.PlayerDAO;
-import com.revature.battleship.dao.PlayerDAOSerialization;
-
+import com.revature.battleship.scores.ScoreKeeper;
+import com.revature.battleship.dao.BattleshipDAO;
+import com.revature.battleship.dao.BattleshipDAO_Postgres;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
@@ -64,165 +62,85 @@ public class BattleshipDriver {
 	
 	private static Scanner scan = new Scanner(System.in);
 	
-	private static PlayerDAO playerDao = new PlayerDAOSerialization();
+	private static BattleshipDAO battleshipDAO = new BattleshipDAO_Postgres();
 	
-	private static HighScores highScores = new HighScoresDAO();
+	private static Prompter prompter = new Prompter();
 	
-	private static PlayerRecords records;
+	private static ScoreKeeper scoreKeeper = new ScoreKeeper();
 	
 	public static void main(String[] args) {
 		PropertyConfigurator.configure("log4j.properties");
-		String playername;
-		String password;
+		
 		Player player = null;
 		String location;
-		String choice = "";
 		
 		//Log-in or create new account
-		System.out.println("Welcome to the Ship Sinking Game!");
-		while(!choice.equalsIgnoreCase("C") && !choice.equalsIgnoreCase("L")) {
-			System.out.println("Please enter 'L' if you would like to log in to an existing account,"
-				+ " or 'C' if you would like to create a new account: ");
-			choice = scan.nextLine();
-			if(choice.equalsIgnoreCase("L")) {
-				System.out.println("Please enter your user name: ");
-				playername = scan.nextLine();
-				System.out.println("Please enter your password: ");
-				password = scan.nextLine();
-				player = playerDao.getPlayer(playername, password);
-				if(player == null) {
-					System.out.println("Sorry. Either your username or password was incorrect.");
-					log.info("Attempt to log into accout with user name " + playername + " was unsuccessful.");
-					choice = "";
-				} else {
-					log.info("Player " + player.getUsername() + " successfully logged in.");
-				}
-			} else if(choice.equalsIgnoreCase("C")) {
-				System.out.print("Please enter a user name: ");
-				playername = scan.nextLine();
-				if(playerDao.playerExists(playername)) {
-					System.out.println("Sorry. That user name is already taken.");
-					choice = "";
-				} else {
-					System.out.print("Please enter a password: ");
-					password = scan.nextLine();
-					player = new Player(playername, password);
-					playerDao.savePlayer(player);
-					log.info("New account created with user name " + player.getUsername() + ".");
-				}
-			} else {
-				System.out.println("Invalid choice. Please enter 'L' to log in, or 'C' to create a new account:");
-			}
-		}
+		prompter.printWelcomeMessage();
+		player = prompter.runLogInScript(player);
 		
 		// Main menu with options for viewing scores and game play
-		System.out.println("Welcome " + player.getUsername() + "!");
-		records = new PlayerRecordsDAO();
 		String selection = "";
-		while(!selection.equalsIgnoreCase("Q")) {
+		while(!selection.equalsIgnoreCase("L")) {
 			System.out.println("What would you like to do?");
-			System.out.println("[V] View Records\n[H] See high scores\n[P] Play a game\n[Q] Quit");
+			System.out.println("[V] View Records\n[H] See High Scores\n[P] Play Game\n[L] Log Out");
 			selection = scan.nextLine();
 			if (selection.equalsIgnoreCase("V")) {
-				records.displayRecords(player);
+				player.showRecords();
 				log.info("User " + player.getUsername() + " viewed their records.");
 			} else if (selection.equalsIgnoreCase("H")) {
-				highScores.displayRecords();
+				battleshipDAO.getHighScores(scoreKeeper);
+				scoreKeeper.displayHighScores();
 				log.info("User " + player.getUsername() + " viewed the high scores.");
 			} else if (selection.equalsIgnoreCase("P")) {
 				BattleshipGame.setUp();
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-				System.out.println("We have received intelligence that there are five enemy ships hidden somewhere off the coast.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("We have created a map of the area, which we have divided up into grids.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("Each of our missiles will destroy an area approximately the size of one of the squares.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("The ships themselves take up 2 squares, 3 squares, 4 squares, 5 squares, or 6 squares, respectively.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("In order to destroy the ships, you must hit each section, but we only have 40 missiles, so aim carefully.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("Enter the coordinates for the square you would like to hit by entering the letter and number.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("For example, to hit the top left square, enter A1.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("OK, it's time to begin. Good luck.");
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					log.error("Problem with using thread sleep method.", e);
-				}
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//				prompter.printInstructions();
 				while(battleship.getRemainingTurns() > 0 && BattleshipGame.getHits() < battleship.getTOTAL_HITS()) {
-					try {
-						Thread.sleep(1500);
-					} catch (InterruptedException e) {
-						log.error("Problem with using thread sleep method.", e);
-					}
+//					try {
+//						Thread.sleep(1000);
+//					} catch (InterruptedException e) {
+//						log.error("Problem with using thread sleep method.", e);
+//					}
 					battleship.getMap().printPlayMap();
 					System.out.println("Please select a location:");
 					location = scan.nextLine();
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						log.error("Problem with using thread sleep method.", e);
+					while (!battleship.getMap().checkIfCoordinatesValid(location)) {
+						System.out.println("Invalid coordinates.");
+						System.out.println("Please select a location:");
+						location = scan.nextLine();
 					}
+//					try {
+//						Thread.sleep(500);
+//					} catch (InterruptedException e) {
+//						log.error("Problem with using thread sleep method.", e);
+//					}
 					System.out.println("Launching missile...");
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						log.error("Problem with using thread sleep method.", e);
-					}
+//					try {
+//						Thread.sleep(2000);
+//					} catch (InterruptedException e) {
+//						log.error("Problem with using thread sleep method.", e);
+//					}
 					BattleshipGame.attack(location);
 				}
 				if(BattleshipGame.getHits() == battleship.getTOTAL_HITS()) {
 					System.out.println("Congratulations! You win!");
-					System.out.println("You managed to sink all enemy ships with " + battleship.getRemainingTurns() + " missilies remaining!");
-					records.updateRecords(player, true, battleship.getRemainingTurns(), BattleshipGame.getHits());
-					highScores.updateRecords(player, true, battleship.getRemainingTurns(), BattleshipGame.getHits());
+					System.out.println("You managed to sink all enemy ships with " + battleship.getRemainingTurns() + " missiles remaining!");
+					battleshipDAO.updatePlayerRecords(player, true, battleship.getRemainingTurns(), BattleshipGame.getHits());
+					player = battleshipDAO.getPlayer(player.getUsername(), player.getPassword());
 					log.info("User " + player.getUsername() + " just won a game with " + battleship.getRemainingTurns() + " turns remaining.");
 				} else {
 					System.out.println("Oh no! We're out of missiles!");
 					System.out.println("You only managed to hit enemy ships " + BattleshipGame.getHits() + " times!");
-					records.updateRecords(player, false, battleship.getRemainingTurns(), BattleshipGame.getHits());
-					highScores.updateRecords(player, false, battleship.getRemainingTurns(), BattleshipGame.getHits());
+					battleshipDAO.updatePlayerRecords(player, false, battleship.getRemainingTurns(), BattleshipGame.getHits());
+					player = battleshipDAO.getPlayer(player.getUsername(), player.getPassword());
 					log.info("User " + player.getUsername() + " just lost a game with " + BattleshipGame.getHits() + " total successful hit(s).");
 				}
 				battleship.getMap().printMap();
-			} else if (selection.equalsIgnoreCase("Q")) {
-				break;
+			} else if (selection.equalsIgnoreCase("L")) {
+				System.out.println("Goodbye, " + player.getUsername() + "!");
+				player = prompter.runLogInScript(player);
 			} else {
-				System.out.println("Sorry. That is not a valid choice. Please enter either 'V', 'H', 'P', or 'Q'");
+				System.out.println("Sorry. That is not a valid choice. Please enter either 'V', 'H', 'P', or 'L'");
 			}
 		}
-		System.out.println("Goodbye " + player.getUsername() + "!");
 	}
 }

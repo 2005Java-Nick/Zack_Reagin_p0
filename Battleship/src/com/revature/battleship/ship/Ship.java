@@ -7,10 +7,10 @@ import com.revature.battleship.exception.ShipLengthLessThanOneException;
 public class Ship {
 
 	private static Logger log = Logger.getRootLogger();
+	
 	private String ID;
 	private int length;
 	private String orientation;
-	//private String[][] status; Currently unimplemented
 	
 	public Ship(String ID, int length) {
 		this.ID = ID;
@@ -20,7 +20,6 @@ public class Ship {
 			log.error("Ship length cannot be less than one.");
 			e.printStackTrace();
 		}
-		//this.status = new String [length][2];
 		this.setRandomOrientation();
 	}
 
@@ -63,17 +62,4 @@ public class Ship {
 		}
 	}
 	
-	//The following methods are unimplemented. May be implemented in future update.
-	/*
-	private void setCoordinates() {
-		
-	}
-	
-	private void hit(int x, int y) {
-		
-	}
-	
-	private boolean isSunk() {
-		return false;
-	}*/
 }
