@@ -1,0 +1,297 @@
+DEBUG	2020-05-15 04:16:02,585	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:18:47,157	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:18:56,521	9364	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-15 04:20:49,547	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:20:58,265	8718	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-15 04:26:22,523	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:26:47,737	25214	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name DoomSlayer.
+ERROR	2020-05-15 04:26:52,985	30462	root	[main]	File not found.
+java.io.FileNotFoundException: C:\Users\zdrea\Documents\Revature\Repositories\Zack_Reagin_p0\Battleship\DoomSlayerrecords.txt (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.revature.battleship.player.PlayerRecordsDAO.getRecords(PlayerRecordsDAO.java:38)
+	at com.revature.battleship.player.PlayerRecordsDAO.displayRecords(PlayerRecordsDAO.java:57)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:128)
+INFO	2020-05-15 04:26:52,987	30464	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 04:28:10,346	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:28:19,232	8886	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+ERROR	2020-05-15 04:28:21,016	10670	root	[main]	File not found.
+java.io.FileNotFoundException: C:\Users\zdrea\Documents\Revature\Repositories\Zack_Reagin_p0\Battleship\DoomSlayerrecords.txt (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.revature.battleship.player.PlayerRecordsDAO.getRecords(PlayerRecordsDAO.java:37)
+	at com.revature.battleship.player.PlayerRecordsDAO.displayRecords(PlayerRecordsDAO.java:56)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:128)
+INFO	2020-05-15 04:28:21,018	10672	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 04:29:08,893	1	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:29:16,609	7717	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+ERROR	2020-05-15 04:29:18,176	9284	root	[main]	File not found.
+java.io.FileNotFoundException: C:\Users\zdrea\Documents\Revature\Repositories\Zack_Reagin_p0\Battleship\DoomSlayerrecords.txt (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.revature.battleship.player.PlayerRecordsDAO.getRecords(PlayerRecordsDAO.java:37)
+	at com.revature.battleship.player.PlayerRecordsDAO.displayRecords(PlayerRecordsDAO.java:54)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:128)
+INFO	2020-05-15 04:29:18,178	9286	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 04:29:24,001	15109	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed the high scores.
+INFO	2020-05-15 04:32:33,446	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:33:05,368	31922	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 04:34:29,326	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:34:42,592	13266	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+ERROR	2020-05-15 04:34:45,752	16426	root	[main]	File not found.
+java.io.FileNotFoundException: C:\Users\zdrea\Documents\Revature\Repositories\Zack_Reagin_p0\Battleship\DoomSlayerrecords.txt (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.revature.battleship.player.PlayerRecordsDAO.getRecords(PlayerRecordsDAO.java:37)
+	at com.revature.battleship.player.PlayerRecordsDAO.displayRecords(PlayerRecordsDAO.java:54)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:128)
+INFO	2020-05-15 04:34:45,754	16428	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 04:34:48,488	19162	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed the high scores.
+INFO	2020-05-15 04:37:12,713	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:37:22,584	9871	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 04:39:03,508	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:39:16,208	12700	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 04:40:50,028	0	com.revature.battleship.main.BattleshipDriver	[main]	Log4j appender configuration is successful !!
+INFO	2020-05-15 04:41:04,921	14893	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 04:47:02,577	372549	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer just won a game with 7 turns remaining.
+INFO	2020-05-15 04:47:23,780	393752	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 05:04:42,057	0	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 05:04:48,959	6902	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 05:06:48,009	0	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 05:06:55,112	7103	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 05:07:04,743	16734	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed the high scores.
+INFO	2020-05-15 05:09:36,985	0	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 05:09:39,336	2351	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 05:09:46,528	9543	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed the high scores.
+INFO	2020-05-15 05:11:20,433	0	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-15 05:11:22,104	1671	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 05:11:26,152	5719	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed the high scores.
+INFO	2020-05-15 05:20:21,650	541217	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer just won a game with 0 turns remaining.
+INFO	2020-05-15 05:20:49,422	568989	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-15 05:20:53,027	572594	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed the high scores.
+INFO	2020-05-15 10:08:57,948	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name BattleShip was unsuccessful.
+INFO	2020-05-15 10:09:23,172	25224	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name BattleShip.
+ERROR	2020-05-15 10:09:35,331	37383	root	[main]	File not found.
+java.io.FileNotFoundException: C:\Users\zdrea\Documents\Revature\Repositories\Zack_Reagin_p0\Battleship\BattleShiprecords.txt (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.revature.battleship.player.PlayerRecordsDAO.getRecords(PlayerRecordsDAO.java:37)
+	at com.revature.battleship.player.PlayerRecordsDAO.displayRecords(PlayerRecordsDAO.java:54)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:127)
+INFO	2020-05-15 10:09:35,335	37387	com.revature.battleship.main.BattleshipDriver	[main]	User BattleShip viewed their records.
+INFO	2020-05-15 10:09:42,651	44703	com.revature.battleship.main.BattleshipDriver	[main]	User BattleShip viewed the high scores.
+INFO	2020-05-18 14:11:43,892	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-18 16:05:08,347	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Anonymous successfully logged in.
+INFO	2020-05-18 16:05:42,544	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Anonymous successfully logged in.
+INFO	2020-05-18 16:06:11,369	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Anonymous successfully logged in.
+INFO	2020-05-18 16:06:41,271	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 16:07:30,335	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Anonymous successfully logged in.
+INFO	2020-05-18 16:09:30,862	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Anonymous successfully logged in.
+INFO	2020-05-18 16:11:29,904	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 16:19:08,250	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 16:22:46,802	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 16:25:56,437	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 16:27:49,555	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 16:41:38,789	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 16:41:42,166	3377	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-18 16:42:05,735	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-18 17:06:25,186	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-18 17:13:24,846	419660	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 16 total successful hit(s).
+INFO	2020-05-18 17:16:23,161	597975	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 16 total successful hit(s).
+INFO	2020-05-18 17:17:07,468	642282	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 16 total successful hit(s).
+INFO	2020-05-18 17:19:04,227	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-18 17:25:23,654	379427	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 15 total successful hit(s).
+INFO	2020-05-18 17:27:58,306	534079	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-18 21:56:23,010	1	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-18 22:04:12,166	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-18 22:11:58,608	466442	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 18 total successful hit(s).
+INFO	2020-05-18 22:24:23,158	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-18 22:24:41,349	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-18 22:48:32,068	1430719	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 14 total successful hit(s).
+INFO	2020-05-19 00:51:03,155	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-19 09:18:17,339	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Chris.
+INFO	2020-05-19 09:18:19,942	2603	com.revature.battleship.main.BattleshipDriver	[main]	User Chris viewed their records.
+INFO	2020-05-19 09:18:25,220	7881	com.revature.battleship.main.BattleshipDriver	[main]	User Chris viewed the high scores.
+INFO	2020-05-19 09:25:40,645	443306	com.revature.battleship.main.BattleshipDriver	[main]	User Chris just lost a game with 18 total successful hit(s).
+INFO	2020-05-19 09:25:50,837	453498	com.revature.battleship.main.BattleshipDriver	[main]	User Chris viewed their records.
+INFO	2020-05-19 10:18:22,864	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Anonymous successfully logged in.
+INFO	2020-05-19 10:27:44,245	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack was unsuccessful.
+INFO	2020-05-19 10:28:54,453	70208	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name DoomSlayer.
+INFO	2020-05-19 14:44:14,314	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack\ was unsuccessful.
+INFO	2020-05-19 14:44:25,162	10848	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 14:44:27,765	13451	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+ERROR	2020-05-19 14:46:20,839	0	com.revature.battleship.main.BattleshipDriver	[main]	Error preparing and executing PostgreSQL statement.
+org.postgresql.util.PSQLException: No value specified for parameter 2.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:270)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:297)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:159)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:109)
+	at com.revature.battleship.dao.BattleshipDAO_Postgres.getPlayerRecords(BattleshipDAO_Postgres.java:147)
+	at com.revature.battleship.dao.BattleshipDAO_Postgres.getPlayer(BattleshipDAO_Postgres.java:84)
+	at com.revature.battleship.main.Prompter.runLogInScript(Prompter.java:39)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:76)
+INFO	2020-05-19 14:46:20,843	4	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 14:48:48,459	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack\ was unsuccessful.
+INFO	2020-05-19 14:49:04,470	16011	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 14:49:07,853	19394	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 14:50:38,621	110162	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 14:52:02,047	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 14:52:28,149	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 14:54:22,184	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 14:54:25,526	3342	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 14:56:28,750	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 15:03:49,315	440565	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 15 total successful hit(s).
+INFO	2020-05-19 15:05:34,948	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 15:06:12,622	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 15:06:16,149	3527	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 15:07:00,984	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 15:07:02,748	1764	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 15:08:01,755	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 15:08:03,325	1570	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 15:08:39,880	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 15:08:41,510	1630	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 15:32:31,446	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack was unsuccessful.
+INFO	2020-05-19 15:32:41,954	10508	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-19 15:32:51,357	19911	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 15:33:40,534	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 15:34:02,456	21922	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name C.
+INFO	2020-05-19 15:35:14,957	0	com.revature.battleship.main.BattleshipDriver	[main]	Player C successfully logged in.
+INFO	2020-05-19 16:43:33,055	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 16:48:41,107	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 21:45:49,036	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-19 21:45:52,179	3143	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-19 21:45:55,659	6623	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+INFO	2020-05-19 22:29:58,701	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Chris.
+INFO	2020-05-19 22:33:46,645	227944	com.revature.battleship.main.BattleshipDriver	[main]	User Chris just lost a game with 18 total successful hit(s).
+INFO	2020-05-19 22:33:56,322	237621	com.revature.battleship.main.BattleshipDriver	[main]	User Chris viewed their records.
+INFO	2020-05-19 22:34:14,001	255300	com.revature.battleship.main.BattleshipDriver	[main]	Player Chris successfully logged in.
+INFO	2020-05-19 22:34:17,362	258661	com.revature.battleship.main.BattleshipDriver	[main]	User Chris viewed their records.
+INFO	2020-05-20 01:05:02,320	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack was unsuccessful.
+ERROR	2020-05-20 01:05:13,867	11547	com.revature.battleship.main.BattleshipDriver	[main]	Error executing PostgreSQL statement.
+org.postgresql.util.PSQLException: ERROR: column "battleship_player_passwordbattleship_player_total_games" of relation "battleship_player" does not exist
+  Position: 59
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2533)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2268)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:313)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:159)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:148)
+	at com.revature.battleship.dao.BattleshipDAO_Postgres.savePlayer(BattleshipDAO_Postgres.java:68)
+	at com.revature.battleship.main.Prompter.runLogInScript(Prompter.java:58)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:76)
+INFO	2020-05-20 01:05:13,869	11549	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-20 01:06:55,114	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack was unsuccessful.
+INFO	2020-05-20 01:07:03,270	8156	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-20 01:07:23,630	28516	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 01:07:26,750	31636	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+INFO	2020-05-20 01:07:53,332	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 01:28:55,301	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 01:29:40,278	44977	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 01:32:21,262	205961	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 15 total successful hit(s).
+INFO	2020-05-20 01:32:53,269	237968	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 01:38:48,339	593038	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 16 total successful hit(s).
+INFO	2020-05-20 01:38:58,085	602784	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 01:45:11,622	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 01:45:13,861	2239	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 01:47:00,210	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 01:47:01,510	1300	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 02:22:20,397	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name DoomSlayer.
+INFO	2020-05-20 02:22:26,716	6319	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-20 02:25:41,304	200907	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer just lost a game with 18 total successful hit(s).
+INFO	2020-05-20 02:25:46,717	206320	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-20 02:26:34,660	254263	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-20 02:27:54,038	0	com.revature.battleship.main.BattleshipDriver	[main]	Player DoomSlayer successfully logged in.
+INFO	2020-05-20 02:27:57,612	3574	com.revature.battleship.main.BattleshipDriver	[main]	User DoomSlayer viewed their records.
+INFO	2020-05-20 02:29:00,021	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 02:34:23,731	323710	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just won a game with 2 turns remaining.
+INFO	2020-05-20 02:34:36,236	336215	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 02:40:38,795	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 02:40:42,125	3330	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 02:42:58,867	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 02:47:53,373	294506	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 19 total successful hit(s).
+INFO	2020-05-20 02:48:14,080	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 02:53:52,530	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 02:57:25,871	213341	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 17 total successful hit(s).
+INFO	2020-05-20 03:02:32,932	520402	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 03:32:04,554	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack was unsuccessful.
+INFO	2020-05-20 03:32:12,692	8138	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-20 03:37:29,963	325409	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 18 total successful hit(s).
+INFO	2020-05-20 03:37:36,339	331785	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 03:37:49,582	345028	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 0 total successful hit(s).
+INFO	2020-05-20 03:40:32,760	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 03:40:35,884	3124	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 03:45:12,329	279569	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just won a game with 1 turns remaining.
+INFO	2020-05-20 03:45:55,914	323154	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+ERROR	2020-05-20 11:44:14,153	0	com.revature.battleship.main.BattleshipDriver	[main]	Error executing PostgreSQL statement and ending database connection.
+org.postgresql.util.PSQLException: ERROR: operator does not exist: bigint = text
+  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.
+  Where: PL/pgSQL function update_player_totals() line 2 at SQL statement
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2533)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2268)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:313)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:159)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:148)
+	at com.revature.battleship.dao.BattleshipDAO_Postgres.updatePlayerRecords(BattleshipDAO_Postgres.java:217)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:75)
+INFO	2020-05-20 12:26:34,302	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack was unsuccessful.
+INFO	2020-05-20 12:26:44,086	9784	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-20 13:02:55,998	2181696	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 21:43:40,610	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name Zack was unsuccessful.
+INFO	2020-05-20 21:43:54,571	13961	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-20 21:43:58,966	18356	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 21:44:04,039	23429	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+INFO	2020-05-20 21:45:17,692	1	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+ERROR	2020-05-20 21:45:20,944	3253	com.revature.battleship.main.BattleshipDriver	[main]	Error preparing and executing PostgreSQL statement.
+org.postgresql.util.PSQLException: The column name battleship_player_username was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2598)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2471)
+	at com.revature.battleship.dao.BattleshipDAO_Postgres.getHighScores(BattleshipDAO_Postgres.java:226)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:91)
+INFO	2020-05-20 21:45:20,946	3255	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+INFO	2020-05-20 21:45:42,262	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 21:53:22,978	460716	com.revature.battleship.main.BattleshipDriver	[main]	User Zack just lost a game with 16 total successful hit(s).
+INFO	2020-05-20 21:53:34,831	472569	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed their records.
+INFO	2020-05-20 21:59:54,517	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+ERROR	2020-05-20 21:59:56,714	2197	com.revature.battleship.main.BattleshipDriver	[main]	Error preparing and executing PostgreSQL statement.
+org.postgresql.util.PSQLException: The column name battleship_player_username was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2598)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2471)
+	at com.revature.battleship.dao.BattleshipDAO_Postgres.getHighScores(BattleshipDAO_Postgres.java:226)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:91)
+INFO	2020-05-20 21:59:56,716	2199	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+INFO	2020-05-20 22:10:03,094	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Zack successfully logged in.
+INFO	2020-05-20 22:10:06,041	2947	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+INFO	2020-05-20 22:15:10,019	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-20 22:15:13,035	3016	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+INFO	2020-05-20 23:17:00,686	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Phantomcat261 successfully logged in.
+INFO	2020-05-20 23:17:05,405	4719	com.revature.battleship.main.BattleshipDriver	[main]	User Phantomcat261 viewed the high scores.
+INFO	2020-05-20 23:27:42,433	0	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-20 23:36:35,400	532967	com.revature.battleship.main.BattleshipDriver	[main]	User Zack viewed the high scores.
+ERROR	2020-05-21 02:54:06,329	0	com.revature.battleship.main.BattleshipDriver	[main]	Error executing PostgreSQL statement.
+org.postgresql.util.PSQLException: ERROR: value too long for type character varying(20)
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2533)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2268)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:313)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:448)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:369)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:159)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:148)
+	at com.revature.battleship.dao.BattleshipDAO_Postgres.savePlayer(BattleshipDAO_Postgres.java:76)
+	at com.revature.battleship.main.Prompter.runLogInScript(Prompter.java:64)
+	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:79)
+INFO	2020-05-21 02:54:06,332	3	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
