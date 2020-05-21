@@ -223,6 +223,7 @@ public class BattleshipDAO_Postgres implements BattleshipDAO {
 			stmt = conn.prepareStatement(GET_TOP_PLAYERS);
 
 			ResultSet res = stmt.executeQuery();
+			s.clearScores();
 			while(res.next()) {
 				userName = res.getString(HIGH_SCORES_USER_NAME);
 				games = res.getInt(HIGH_SCORES_TOTAL_GAMES);

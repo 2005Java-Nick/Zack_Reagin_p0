@@ -295,3 +295,20 @@ org.postgresql.util.PSQLException: ERROR: value too long for type character vary
 	at com.revature.battleship.main.Prompter.runLogInScript(Prompter.java:64)
 	at com.revature.battleship.main.BattleshipDriver.main(BattleshipDriver.java:79)
 INFO	2020-05-21 02:54:06,332	3	com.revature.battleship.main.BattleshipDriver	[main]	New account created with user name Zack.
+INFO	2020-05-21 10:25:50,567	0	com.revature.battleship.main.BattleshipDriver	[main]	Player PlaySpike402 successfully logged in.
+INFO	2020-05-21 10:25:54,734	4167	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 viewed their records.
+INFO	2020-05-21 10:26:20,437	29870	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 viewed the high scores.
+INFO	2020-05-21 10:32:29,245	398678	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 just won a game with 1 turns remaining.
+INFO	2020-05-21 10:32:34,588	404021	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 viewed their records.
+INFO	2020-05-21 10:32:43,940	413373	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 viewed the high scores.
+INFO	2020-05-21 10:33:48,549	477982	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 viewed the high scores.
+INFO	2020-05-21 10:39:22,643	0	com.revature.battleship.main.BattleshipDriver	[main]	Attempt to log into accout with user name +QJ5v{"}.ac?Bc*/ was unsuccessful.
+INFO	2020-05-21 10:39:53,430	30787	com.revature.battleship.main.BattleshipDriver	[main]	Player PlaySpike402 successfully logged in.
+INFO	2020-05-21 10:39:57,566	34923	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 viewed their records.
+INFO	2020-05-21 10:40:03,289	40646	com.revature.battleship.main.BattleshipDriver	[main]	User PlaySpike402 viewed the high scores.
+INFO	2020-05-21 10:42:40,862	0	com.revature.battleship.main.BattleshipDriver	[main]	Player Barracupid304 successfully logged in.
+INFO	2020-05-21 10:42:43,110	2248	com.revature.battleship.main.BattleshipDriver	[main]	User Barracupid304 viewed their records.
+INFO	2020-05-21 10:42:49,692	8830	com.revature.battleship.main.BattleshipDriver	[main]	User Barracupid304 viewed the high scores.
+INFO	2020-05-21 10:47:11,368	270506	com.revature.battleship.main.BattleshipDriver	[main]	User Barracupid304 just won a game with 2 turns remaining.
+INFO	2020-05-21 10:47:21,812	280950	com.revature.battleship.main.BattleshipDriver	[main]	User Barracupid304 viewed their records.
+INFO	2020-05-21 10:47:26,293	285431	com.revature.battleship.main.BattleshipDriver	[main]	User Barracupid304 viewed the high scores.

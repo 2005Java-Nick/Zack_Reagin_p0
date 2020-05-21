@@ -19,6 +19,10 @@ public class ScoreKeeper {
 		topPlayers.add(h);
 	}
 	
+	public void clearScores() {
+		topPlayers.clear();
+	}
+	
 	public void displayHighScores() {
 		System.out.println("\nCurrent Top Players\n");
 		DecimalFormat df = new DecimalFormat("#.##");

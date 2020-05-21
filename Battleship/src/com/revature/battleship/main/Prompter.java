@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 import com.revature.battleship.dao.BattleshipDAO;
 import com.revature.battleship.dao.BattleshipDAO_Postgres;
+import com.revature.battleship.game.BattleshipGame;
 import com.revature.battleship.player.Player;
 
 public class Prompter {
@@ -122,5 +123,41 @@ public class Prompter {
 			log.error("Problem with using thread sleep method.", e);
 		}
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+	
+	public void playGame(BattleshipGame battleship) {
+		while(battleship.getRemainingTurns() > 0 && BattleshipGame.getHits() < battleship.getTOTAL_HITS()) {
+			String location;
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				log.error("Problem with using thread sleep method.", e);
+//			}
+			battleship.getMap().printPlayMap();
+			System.out.println("Please select a location:");
+			location = scan.nextLine();
+			while (!battleship.getMap().checkIfCoordinatesValid(location)) {
+				System.out.println("Invalid coordinates.");
+				System.out.println("Please select a location:");
+				location = scan.nextLine();
+			}
+//			try {
+//				Thread.sleep(500);
+//			} catch (InterruptedException e) {
+//				log.error("Problem with using thread sleep method.", e);
+//			}
+			System.out.println("Launching missile...");
+//			try {
+//				Thread.sleep(2000);
+//			} catch (InterruptedException e) {
+//				log.error("Problem with using thread sleep method.", e);
+//			}
+			BattleshipGame.attack(location);
+		}
+	}
+	
+	public void logOut(Player player) {
+		System.out.println("Goodbye, " + player.getUsername() + "!");
+		player = this.runLogInScript(player);
 	}
 }
