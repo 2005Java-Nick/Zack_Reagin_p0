@@ -9,6 +9,10 @@ import com.revature.battleship.exception.HeightLessThanOneException;
 import com.revature.battleship.exception.WidthLessThanOneException;
 import com.revature.battleship.ship.Ship;
 
+/*
+ * The GameMap class consists of grid-type objects representing a map on which
+ * the Battleship game is played.
+ */
 public class GameMap {
 
 	private static Logger log = Logger.getRootLogger();
@@ -21,16 +25,26 @@ public class GameMap {
 	private ArrayList<String> attacked = new ArrayList<String>();
 	private int hits = 0;
 	
+	/*
+	 * Constructor method that initializes a GameMap object's height and width
+	 * to the given int arguments.
+	 */
 	public GameMap(int height, int width) {
 		this.height = height;
 		this.width = width;
 		contents = new String [this.height][this.width];
 	}
 	
+	/*
+	 * Returns the GameMap's height.
+	 */
 	public int getHeight() {
 		return this.height;
 	}
 	
+	/*
+	 * Sets the GameMap's height.
+	 */
 	public void setHeight(int height) throws HeightLessThanOneException {
 		if(height < 0) {
 			throw new HeightLessThanOneException();
@@ -39,10 +53,16 @@ public class GameMap {
 		} 
 	}
 	
+	/*
+	 * Returns the GameMap's width.
+	 */
 	public int getWidth() {
 		return this.width;
 	}
 	
+	/*
+	 * Sets the GameMap's width.
+	 */
 	public void setWidth(int width) throws WidthLessThanOneException {
 		if (width < 0) {
 			throw new WidthLessThanOneException();
@@ -51,6 +71,10 @@ public class GameMap {
 		}
 	}
 	
+	/*
+	 * Checks whether the coordinates given by a user are valid coordinates
+	 * for a location on the GameMap and returns true is so, and false otherwise.
+	 */
 	public boolean checkIfCoordinatesValid(String loc) {
 		if(loc == null) {
 			return false;
@@ -71,7 +95,9 @@ public class GameMap {
 		return true;
 	}
 	
-	// Returns what is located at the given coordinates in the map
+	/*
+	 * Returns what is located at the given coordinates in the map.
+	 */
 	public String getLocation(int y, int x) throws CoordinateLessThanZeroException, CoordinateGreaterThanBoundaryException {
 		if(y < 0 || x < 0) {
 			throw new CoordinateLessThanZeroException();
@@ -82,7 +108,10 @@ public class GameMap {
 		}
 	}
 	
-	// Checks if location has been attacked previously. If not, updates map as a hit or miss, and returns true.
+	/*
+	 *  Checks if location has been attacked previously. If not, updates map
+	 *  as a hit or miss, and returns true.
+	 */
 	public boolean attackLocation(int y, int x) {
 		String location = this.getCoordinates(y, x);
 		if(attacked.contains(location)) {
@@ -109,12 +138,17 @@ public class GameMap {
 		}
 	}
 	
-	// Returns total number of hits.
+	/* 
+	 * Returns total number of hits.
+	 */
 	public int getHits() {
 		return this.hits;
 	}
 	
-	// Place a ship on the map by first using the findLocation method to find a vacant location on the map
+	/*
+	 * Place a ship on the map by first using the findLocation method to find
+	 * a vacant location on the map.
+	 */
 	public void placeShip(Ship s) {
 		int[] location = findLocation(s);
 		if(s.getOrientation() == "vertical") {
@@ -188,7 +222,10 @@ public class GameMap {
 		return coordinates;
 	}
 	
-	// Prints a map showing the current status of the map, including all hits, misses, and ship locations
+	/*
+	 * Prints a map showing the current status of the map, including all hits, misses,
+	 * and ship locations.
+	 */
 	public void printMap() {
 		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String border = " -";
@@ -220,7 +257,9 @@ public class GameMap {
 		System.out.println(border);
 	}
 	
-	// Prints a map for gameplay, showing only hits and misses
+	/*
+	 * Prints a map for gameplay, showing only hits and misses.
+	 */
 	public void printPlayMap() {
 		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String border = " -";
@@ -255,7 +294,9 @@ public class GameMap {
 		System.out.println(border);
 	}
 	
-	// Takes two ints and generates the corresponding grid location (ex. 'A1', 'D7', 'F5', etc.)
+	/*
+	 * Takes two ints and generates the corresponding grid location (ex. 'A1', 'D7', 'F5', etc.)
+	 */
 	public String getCoordinates(int y, int x) {
 		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String coordinates = "";

@@ -17,16 +17,31 @@ public class Prompter {
 	private static Logger log = Logger.getLogger(BattleshipDriver.class);
 	
 
+	/*
+	 * Prints a generic welcome message.
+	 */
 	public void printWelcomeMessage() {
 		System.out.println("Welcome to the Naval Warfare Game!");
 
 	}
 
+	/*
+	 * Prints the choices for the log-in screen.
+	 */
 	public void printLogInMessage() {
 		System.out.println("What would you like to do?"
 				+ "\n[L] Log In\n[C] Create New Account.\n[Q] Quit.");
 	}
 
+	/*
+	 * Asks user to log into an account, create a new account, or quit the program.
+	 * A new account must have a unique user name, or the user will be told that the
+	 * user name already exists. This will return a new Player object with the requested
+	 * user name and password, and all other variables set to 0. When logging in, the
+	 * user name and password are checked against the database to ensure that the account
+	 * exists, and returns a Player object with the data for that account. Quitting
+	 * terminates the program.
+	 */
 	public Player runLogInScript(Player player) {
 		String choice = "";
 		String playername;
@@ -72,6 +87,9 @@ public class Prompter {
 		return player;
 	}
 
+	/*
+	 * Prints game instructions to the console.
+	 */
 	public void printInstructions() {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("We have received intelligence that there are five enemy ships hidden somewhere off the coast.");
@@ -125,6 +143,10 @@ public class Prompter {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 	
+	/*
+	 * Runs through a game of battleship by continually prompting the user for input
+	 * and taking action as dictated.
+	 */
 	public void playGame(BattleshipGame battleship) {
 		while(battleship.getRemainingTurns() > 0 && BattleshipGame.getHits() < battleship.getTOTAL_HITS()) {
 			String location;
@@ -156,6 +178,9 @@ public class Prompter {
 		}
 	}
 	
+	/*
+	 * Exits a players account and displays the log-in screen.
+	 */
 	public void logOut(Player player) {
 		System.out.println("Goodbye, " + player.getUsername() + "!");
 		player = this.runLogInScript(player);

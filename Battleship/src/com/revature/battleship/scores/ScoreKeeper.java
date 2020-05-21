@@ -4,25 +4,43 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * The ScoreKeeper Class is used to keep track of HighScore objects.
+ */
 public class ScoreKeeper {
 	List<HighScore> topPlayers;
 	
+	/*
+	 * The constructor takes no parameters, and only instantiates the topPlayers ArrayList.
+	 */
 	public ScoreKeeper() {
 		topPlayers = new ArrayList<HighScore>();
 	}
 	
+	/*
+	 * Getter method that returns a list of HighScores.
+	 */
 	public  List<HighScore> getTopPlayers() {
 		return this.topPlayers;
 	}
 	
+	/*
+	 * Add a HighScore object to the topPlayer list.
+	 */
 	public void addHighScore(HighScore h) {
 		topPlayers.add(h);
 	}
 	
+	/*
+	 * Clear all of the HighScores from the topPlayer list.
+	 */
 	public void clearScores() {
 		topPlayers.clear();
 	}
 	
+	/*
+	 * Displays highScore objects from topPlayer list in a readable format.
+	 */
 	public void displayHighScores() {
 		System.out.println("\nCurrent Top Players\n");
 		DecimalFormat df = new DecimalFormat("#.##");
